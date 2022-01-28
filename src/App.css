@@ -1,6 +1,32 @@
 .App {
   text-align: center;
 }
+.Boton{
+  background-color:rgba(15, 185, 185, 0.678);
+ 
+  border:4px double rgb(6, 88, 40) ;
+  
+  width: 100px;
+  height: 52px;
+ 
+  margin: auto;
+  margin-inline: 5px;
+  margin-block: 5px;
+  
+  border-radius: 8px;
+ 
+  
+
+}
+.Boton:hover{
+ background-color: rgb(6, 91, 124);
+ color: rgb(109, 131, 114);
+ border:4px double rgb(5, 180, 78) ;
+ 
+ 
+ 
+
+} 
 
 .App-logo {
   height: 40vmin;

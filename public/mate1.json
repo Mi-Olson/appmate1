@@ -1,0 +1,13 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"matematica1"},
+{"type":"table","name":"mate1","database":"matematica1","data":
+[
+{"id":"1","unidad":"LÓGICA PROPOSICIONAL","contenido":"Proposiciones. Proposiciones atómicas y moleculares. Operaciones lógicas.\r\nEquivalencias. Tablas de verdad. Leyes lógicas. Simplificaciones. Circuitos Lógicos.\r\nImplicaciones asociadas"},
+{"id":"2","unidad":"CUANTIFICADORES","contenido":" Funciones proposicionales en una y varias variables. Cuantificador universal\r\ny existencial. Alcance de un cuantificador. Propiedades de los cuantificadores. Negación\r\nde funciones proposicionales cuantificadas."},
+{"id":"3","unidad":"RAZONAMIENTO DEDUCTIVO","contenido":"Razonamiento deductivo.Validez de un razonamiento.Reglas de Inferencias.Método directo. Método indirecto.Consistencia del conjunto de premisas. Inferencia."},
+{"id":"4","unidad":"CONJUNTOS Y RELACIONES","contenido":"Conjuntos; pertenencia, inclusión. Conjunto de partes. Operaciones entre\r\nconjuntos. Propiedades. Representación en diagrama de Venn. Producto Cartesiano.\r\nRepresentación. Relaciones. Definición. Formas de representación Relaciones binarias.\r\nPropiedades Relaciones de equivalencia y de orden amplio y estricto. Diagrama de\r\nHasse."},
+{"id":"5","unidad":"COMBINATORIA","contenido":"Análisis combinatorio simple y con repetición. Principio de la adición y de la\r\nmultiplicación. Factorial"}
+]
+}
+]
