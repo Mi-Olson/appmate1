@@ -6,7 +6,7 @@ import Unidades from "./components/Unidades.jsx"
 import Encabezado from './components/Encabezado';
 import Relaciones from './components/Relaciones';
 import Razonamiento from './components/Razonamiento';
-
+import Combinatoria from './components/Combinatoria';
 
 
 
@@ -18,8 +18,8 @@ function App() {
   const [data,setData]=useState([]);
   const[unidad,setUnidad]=useState("inicio");
   //// LOGICA  ---IMAGENES//
-  const[dimension,setDimension] =useState("rounded-md w-56 h-32 mx-3 my-2 hover:scale-110 ");
-  const[grande,setGrande] =useState("rounded-80  h-screen w-screen mx-0 px-10 py-5 mt-5 ");
+  const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-solid border-2 border-indigo-600 hover:scale-110 ");
+  const[grande,setGrande] =useState("rounded-80  h-screen w-screen mx-0 px-5 py-5 mt-5 ");
 
   const[imagen1,setImagen1] =useState(dimension);
   const[imagen2,setImagen2] =useState(dimension);
@@ -33,10 +33,13 @@ function App() {
   const[imagen10,setImagen10] =useState(dimension);
   
   const[eleccion,setEleccion]=useState(false);
+
+  const [columna,setColumnas]=useState("grid grid-cols-4 gap-x-60 ");
+    
    
   
 
-  const getData = async ({}) => {
+  const getData = async () => {
     try{
     //  cargarInicio(true)
     const url= `mate1.json`;
@@ -57,7 +60,7 @@ function App() {
     }
   } 
    useEffect (() =>{
-       getData({});
+       getData();
       
    },[]);
   return (
@@ -71,9 +74,18 @@ function App() {
        setImagen2={setImagen2}
        setImagen3={setImagen3}
        setImagen4={setImagen4}
+       setImagen5={setImagen5}
+       setImagen6={setImagen6}
+       setImagen7={setImagen7}
+       setImagen8={setImagen8}
+       setImagen9={setImagen9}
+       setImagen10={setImagen10}
+       
        dimension={dimension}
        setUnidad={setUnidad}
        unidad={unidad}
+      
+       setColumnas={setColumnas}
       />  
 
       <div className="grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 " >
@@ -116,6 +128,8 @@ function App() {
                         <Relaciones
                         dimension={dimension}
                         grande={grande}
+                        columna={columna}
+                        setColumnas={setColumnas}
                         setImagen1={setImagen1}
                         setImagen2={setImagen2}
                         setImagen3={setImagen3}
@@ -139,7 +153,26 @@ function App() {
                         imagen9={imagen9}
                         imagen10={imagen10}
                         
-                        /></div>):(<p>que lio</p>)}
+                        /></div>):((unidad==="5")?( <div className='grid grid-cols-1 mx-0 px-0'>
+                        <Combinatoria
+                        dimension={dimension}
+                        grande={grande}
+                        setImagen1={setImagen1}
+                        setImagen2={setImagen2}
+                        setImagen3={setImagen3}
+                        setImagen4={setImagen4}
+                        setImagen5={setImagen5}
+                        
+                        setEleccion={setEleccion}
+                        eleccion={eleccion}
+                        imagen1={imagen1}
+                        imagen2={imagen2}
+                        imagen3={imagen3}
+                        imagen4={imagen4}
+                        imagen5={imagen5}
+                      
+                        
+                        /></div>):(<p></p>))}
         </div>            
       
        
