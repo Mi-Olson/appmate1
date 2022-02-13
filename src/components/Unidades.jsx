@@ -5,12 +5,25 @@ import React from 'react';
   
 
 
-const unidades = ({key,id,unidad,contenido,fondo,setUnidad}) => {
+const unidades = ({key,id,unidad,contenido,fondo,setUnidad,setEsperaActiva}) => {
    
    const eleccion = (elegida) => {
-       setUnidad(elegida.id);
+      
        
-   }
+   
+  
+    setEsperaActiva(true);
+
+    setTimeout(() => {
+        // Paso el cargando a false
+        // para eliminar el spinner
+        setEsperaActiva(false);
+        setUnidad(elegida.id);
+       
+            
+            }, 3000);
+   ;
+};
     
   
 

@@ -25,7 +25,7 @@ const Razonamiento = ({dimension,grande,setImagen1,setImagen2,setEleccion,imagen
     return (
         <Fragment>
                       
-         <div className="grid grid-rows-1 grid-flow-col gap-4">
+         <div className="flex justify-center grid-rows-1 grid-flow-col gap-10 mt-10 ">
             <div>
                 <button className={imagen1} onClick={()=>imagen("1")}>
                 <img className={imagen1} title="click para agrandar" src={reglas} width="100" heitgh="100" alt='20'></img>

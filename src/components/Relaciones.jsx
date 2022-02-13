@@ -75,25 +75,56 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
     
     return (
         <Fragment>
-              <div >
-            {(opcionRelaciones==="inicio")?(
-                <div className={columna}>
-                        <div>
-                            <button className="rounded-lg border-2 border-emerald-600 w-32 h-32 bg-teal-400 hover:bg-teal-600 hover:border-2 hover:border-teal-900 " onClick={()=>cargarOpcion("1")}> 
-                            TIPOS DE RELACIONES
-                            </button>
-                        </div>
             
-                        <div>
-                            <button className="rounded-lg border-2 border-emerald-600 w-32 h-32 bg-teal-400 hover:bg-teal-600 hover:border-2 hover:border-teal-900 " onClick={()=>cargarOpcion("2")}>
-                                PROPIEDADES DE RELACIONES
-                            </button>
-                            
+            {(opcionRelaciones==="inicio" )?(
+                <div  >
+              
+                        <figure className="bg-gradient-to-r from-emerald-500 to-emerald-100 w-90 h-60  rounded-xl p-8  dark:bg-slate-800 mb-5  ">  
+                                <div className="flex grid grid-cols-2 " > 
+                                    <div className="underline italic text-lg font-medium " >
+                                
+                                    </div>   
+                                    <button className="rounded-full w-32 h-8 bg-emerald-600 hover:bg-emerald-400" onClick={()=>cargarOpcion("1")}> Contenido</button>
+                                </div>
+                                    
+                                    <div className="pt-6 space-y-4">
+                                                <blockquote>
+                                                <p className="text-lg font-medium">
+                                                TIPOS DE RELACIONES
+                                                </p>
+                                                </blockquote>
+                                    
+                                                        
+                                    </div>
+                        </figure> 
+                
+                       <figure className="bg-gradient-to-r from-emerald-500 to-emerald-100 w-90 h-60  rounded-xl p-8  dark:bg-slate-800  ">  
+                        <div className="flex grid grid-cols-2 " > 
+                            <div className="underline italic text-lg font-medium " >
+                   
+                            </div>   
+                            <button className="rounded-full w-32 h-8 bg-emerald-600 hover:bg-emerald-400" onClick={()=>cargarOpcion("2")}> Contenido</button>
                         </div>
-                </div>
+             
+                        <div className="pt-6 space-y-4">
+                            <blockquote>
+                            <p className="text-lg font-medium">  PROPIEDADES DE RELACIONES</p>
+                            </blockquote>
+                            <figcaption className="text-xs font-medium">
+                                <div>      </div>
+                                
+                            </figcaption>
+                        </div>
+        
+                        </figure>
+                 </div>
+               
+
+
             ):(opcionRelaciones==="1")?(
-                <div className={columna}>
-                    <div>
+                <div className="grid grid-rows-1 grid-flow-col gap-4">
+                    
+                    <div >
                         <button className={imagen1} onClick={()=>imagen("1")}>
                         <img className={imagen1} title="click para agrandar" src={ima[0]} width="50" heitgh="50" alt='20'></img>
                         </button>
@@ -108,6 +139,8 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
                         <img className={imagen3} title="click para agrandar" src={ima[2]} width="50" heitgh="50" alt='20'></img>
                         </button>
                     </div>
+                
+                    
                     <div>
                         <button className={imagen4} onClick={()=>imagen("4")}>
                         <img className={imagen4} title="click para agrandar" src={ima[3]} width="50" heitgh="50" alt='20'></img>
@@ -115,33 +148,33 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
                     </div>
                 </div>
             ):(
-                <div className={columna}>
-                <div>
+                <div className="grid grid-rows-2 grid-flow-col gap-4">
+                <div className='mx-5'>
                     <button className={imagen5} onClick={()=>imagen("5")}>
                     <img className={imagen5} title="click para agrandar" src={ima[4]} width="50" heitgh="50" alt='20'></img>
                     </button>
                 </div>
-                <div>
+                <div className='mx-5' >
                     <button className={imagen6} onClick={()=>imagen("6")}>
                     <img className={imagen6} title="click para agrandar" src={ima[5]} width="50" heitgh="50" alt='20'></img>
                     </button>
                 </div>
-                <div>
+                <div className='mx-5' >
                     <button className={imagen7} onClick={()=>imagen("7")}>
                     <img className={imagen7} title="click para agrandar" src={ima[6]} width="50" heitgh="50" alt='20'></img>
                     </button>
                 </div>
-                <div>
+                <div className='mx-5'>
                     <button className={imagen8} onClick={()=>imagen("8")}>
                     <img className={imagen8} title="click para agrandar" src={ima[7]} width="50" heitgh="50" alt='20'></img>
                     </button>
                 </div>
-                <div>
+                <div className='mx-5'>
                     <button className={imagen9} onClick={()=>imagen("9")}>
                     <img className={imagen9} title="click para agrandar" src={ima[8]} width="50" heitgh="50" alt='20'></img>
                     </button>
                 </div>
-                <div>
+                <div className='mx-5'>
                     <button className={imagen10} onClick={()=>imagen("10")}>
                     <img className={imagen10} title="click para agrandar" src={ima[9]} width="50" heitgh="50" alt='20'></img>
                     </button>
@@ -151,7 +184,7 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
             )      }
 
             
-        </div>
+        
 
        
         </Fragment>

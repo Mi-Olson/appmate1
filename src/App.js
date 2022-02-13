@@ -1,6 +1,7 @@
 
 import './App.css';
 import Logica from "./components/Logica"
+import Spinner from './components/Spinner'
 
 import Unidades from "./components/Unidades.jsx"
 import Encabezado from './components/Encabezado';
@@ -29,11 +30,12 @@ function App() {
   
 
   const [data,setData]=useState([]);
-
+  //para spinner(apaga o enciende)
+  const [esperaActiva, setEsperaActiva] = useState(false);
 
   const[unidad,setUnidad]=useState("inicio");
   //// LOGICA  ---IMAGENES//
-  const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-solid border-2 border-indigo-600 hover:scale-110 ");
+  const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-double border-4 border-indigo-600 hover:scale-110 hover:border-hidden mx-5 my-5");
   const[grande,setGrande] =useState("rounded-80  h-screen w-screen mx-0 px-5 py-5 mt-5 ");
 
   const[imagen1,setImagen1] =useState(dimension);
@@ -49,8 +51,8 @@ function App() {
   
   const[eleccion,setEleccion]=useState(false);
 
-  // const [columna,setColumnas]=useState("grid grid-cols-4 gap-x-60 ");
-  const [columna,setColumnas]=useState("grid grid-cols-2  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-x-60 ");
+   const [columna,setColumnas]=useState("grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 ");
+  // const [columna,setColumnas]=useState("grid grid-cols-2  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-x-10 ");
     
   
   const [opcionRelaciones,setOpcionRelaciones]=useState("inicio");
@@ -101,14 +103,16 @@ function App() {
        unidad={unidad}
        setOpcionRelaciones={setOpcionRelaciones}
        opcionRelaciones={opcionRelaciones}
-
+       setEsperaActiva={setEsperaActiva}
       
        setColumnas={setColumnas}
       />  
 
-      <div className="grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 " >
-        { unidad ==="inicio" ? (data.map(dato=>(
-
+      <div  >
+        { (unidad ==="inicio" && !esperaActiva) ? (
+                  <div  className="grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 ">{
+                  data.map(dato=>(
+                    
                       <Unidades
                         key={dato.id}
                         id={dato.id}
@@ -116,12 +120,15 @@ function App() {
                         contenido={dato.contenido}
                         fondo={"bg-gradient-to-r from-emerald-500 to-emerald-100 w-90 h-60  rounded-xl p-8  dark:bg-slate-800  "}
                         setUnidad={setUnidad}
+                        setEsperaActiva={setEsperaActiva}
                         
 
                                    
                       
                       /> 
-                    ))) : (unidad==="1")?(<div className='grid grid-cols-1 mx-0 px-0'>
+                      
+                    ))}</div>
+                    ) : (unidad==="1" && !esperaActiva)?(<div className='grid grid-cols-1 mx-0 px-0'>
                       <Logica
                       
                       dimension={dimension}
@@ -132,8 +139,9 @@ function App() {
                       eleccion={eleccion}
                       imagen1={imagen1}
                       imagen2={imagen2}
+                     
                       /></div>):
-                      (unidad==="3")?(<div className='grid grid-cols-1 mx-0 px-0'>
+                      (unidad==="3" && !esperaActiva)?(<div className='grid grid-cols-1 mx-0 px-0'>
                       <Razonamiento
                       dimension={dimension}
                       grande={grande}
@@ -143,8 +151,10 @@ function App() {
                       eleccion={eleccion}
                       imagen1={imagen1}
                       imagen2={imagen2}
+
                       /></div>)
-                      :(unidad==="4")?( <div >
+                      :(unidad==="4" && !esperaActiva)?( 
+                      <div className="grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 " >
                         <Relaciones
                         setOpcionRelaciones={setOpcionRelaciones}
                         opcionRelaciones={opcionRelaciones}
@@ -176,7 +186,7 @@ function App() {
                         imagen10={imagen10}
                         ima={ima}
                         
-                        /></div>):((unidad==="5")?( <div className='grid grid-cols-1 mx-0 px-0'>
+                        /></div>):((unidad==="5" && !esperaActiva)?( <div className='grid grid-cols-1 mx-0 px-0'>
                         <Combinatoria
                         dimension={dimension}
                         grande={grande}
@@ -195,7 +205,8 @@ function App() {
                         imagen5={imagen5}
                       
                         
-                        /></div>):(<p></p>))}
+                        /></div>):(esperaActiva ?
+                          <Spinner/>:(<p></p>)))}
         </div>            
       
        
