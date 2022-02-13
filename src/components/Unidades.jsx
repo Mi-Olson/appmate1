@@ -21,7 +21,7 @@ const unidades = ({key,id,unidad,contenido,fondo,setUnidad,setEsperaActiva}) => 
         setUnidad(elegida.id);
        
             
-            }, 3000);
+            }, 2000);
    ;
 };
     

@@ -1,12 +1,24 @@
-import React, { Fragment, useState} from 'react'
+import React, { Fragment} from 'react'
 
 
-const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setImagen5,setImagen6,setImagen7,setImagen8,setImagen9,setImagen10,setEleccion,imagen1,imagen2,imagen3,imagen4,imagen5,imagen6,imagen7,imagen8,imagen9,imagen10,eleccion,columna,setColumnas,setOpcionRelaciones,opcionRelaciones}) => {
+const Relaciones = ({setEsperaActiva,esperaActiva,ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setImagen5,setImagen6,setImagen7,setImagen8,setImagen9,setImagen10,setEleccion,imagen1,imagen2,imagen3,imagen4,imagen5,imagen6,imagen7,imagen8,imagen9,imagen10,eleccion,columna,setColumnas,setOpcionRelaciones,opcionRelaciones}) => {
     
    
     const cargarOpcion = (opcion) => {
-        setOpcionRelaciones(opcion);
+       
+  
+        setEsperaActiva(true);
 
+        setTimeout(() => {
+            setOpcionRelaciones(opcion);
+            // Paso el cargando a false
+            // para eliminar el spinner
+            setEsperaActiva(false);
+   
+            
+                
+                }, 3000);
+       
 
     }
     
@@ -76,7 +88,7 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
     return (
         <Fragment>
             
-            {(opcionRelaciones==="inicio" )?(
+            {(opcionRelaciones==="inicio" && !esperaActiva)?(
                 <div  >
               
                         <figure className="bg-gradient-to-r from-emerald-500 to-emerald-100 w-90 h-60  rounded-xl p-8  dark:bg-slate-800 mb-5  ">  
@@ -121,7 +133,7 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
                
 
 
-            ):(opcionRelaciones==="1")?(
+            ):(opcionRelaciones==="1" && !esperaActiva)?(
                 <div className="grid grid-rows-1 grid-flow-col gap-4">
                     
                     <div >
@@ -147,7 +159,7 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
                         </button>
                     </div>
                 </div>
-            ):(
+            ):((opcionRelaciones==="2" && !esperaActiva)?(
                 <div className="grid grid-rows-2 grid-flow-col gap-4">
                 <div className='mx-5'>
                     <button className={imagen5} onClick={()=>imagen("5")}>
@@ -180,7 +192,7 @@ const Relaciones = ({ima,grande,setImagen1,setImagen2,setImagen3,setImagen4,setI
                     </button>
                 </div>
 
-            </div>
+            </div>):(<p></p>)
             )      }
 
             

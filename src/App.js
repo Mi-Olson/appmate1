@@ -35,7 +35,7 @@ function App() {
 
   const[unidad,setUnidad]=useState("inicio");
   //// LOGICA  ---IMAGENES//
-  const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-double border-4 border-indigo-600 hover:scale-110 hover:border-hidden mx-5 my-5");
+  const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-double border-4 border-emerald-600 hover:scale-110 hover:border-hidden mx-5 my-5");
   const[grande,setGrande] =useState("rounded-80  h-screen w-screen mx-0 px-5 py-5 mt-5 ");
 
   const[imagen1,setImagen1] =useState(dimension);
@@ -157,6 +157,9 @@ function App() {
                       <div className="grid grid-cols-1  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-3 lg:gap-5 lg:grid-rows-2   mx-5   my-5 " >
                         <Relaciones
                         setOpcionRelaciones={setOpcionRelaciones}
+                        esperaActiva={esperaActiva}
+                        setEsperaActiva={setEsperaActiva}
+
                         opcionRelaciones={opcionRelaciones}
                         dimension={dimension}
                         grande={grande}
