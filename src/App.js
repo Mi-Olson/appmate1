@@ -29,7 +29,7 @@ function App() {
   
 
   const [data,setData]=useState([]);
-  const [imagenesTodas,setImagenesTodas]=useState([]);
+
 
   const[unidad,setUnidad]=useState("inicio");
   //// LOGICA  ---IMAGENES//

@@ -33,7 +33,7 @@ const Encabezado = ({setEleccion,setImagen1,setImagen2,setImagen3,setImagen4,set
     }
     return ( 
         <Fragment>
-    <div className='w-screen h-16 mx-0 px-5 bg-teal-400'>
+    <div className='w-screen h-16 mx-0 px-5 bg-emerald-600'>
         { (eleccion && unidad !=="inicio") 
             ?(
             <button className="Boton" onClick={()=>normalizarImagen()}>

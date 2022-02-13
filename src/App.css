@@ -2,8 +2,9 @@
   text-align: center;
 }
 .Boton{
-  background-color:rgba(15, 185, 185, 0.678);
- 
+  /* background-color: rgb(4 120 87); */
+  background-color:rgb(5, 150, 105);
+
   border:4px double rgb(6, 88, 40) ;
   
   width: 100px;

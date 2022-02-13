@@ -22,7 +22,7 @@ return(
               <div className="underline italic text-lg font-medium " >
                unidad {id} 
                </div>   
-               <button className="rounded-full w-32 h-8 bg-teal-400 hover:bg-teal-600" onClick={()=>eleccion({id})}> Contenido</button>
+               <button className="rounded-full w-32 h-8 bg-emerald-600 hover:bg-emerald-400" onClick={()=>eleccion({id})}> Contenido</button>
          </div>
              
              <div className="pt-6 space-y-4">

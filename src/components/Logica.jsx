@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment } from 'react'
 import linklogica from "./images/linklogica.jpg"
 import logica2 from "./images/logica-2.png"
 
