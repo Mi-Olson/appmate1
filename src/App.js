@@ -8,14 +8,29 @@ import Relaciones from './components/Relaciones';
 import Razonamiento from './components/Razonamiento';
 import Combinatoria from './components/Combinatoria';
 
+//imagenes relaciones
+import rela1 from "./components/images/clas_relaciones-1.jpg"
+import rela2 from "./components/images/clas_relaciones_2.png"
+import rela3 from "./components/images/clas-rel-3.png"
+import rela4 from "./components/images/clas-rel-4.png"
+import rela5 from "./components/images/clas-rel-5.png"
+import rela6 from "./components/images/clas-rel-6.png"
+import rela7 from "./components/images/clas-rel-7.png"
+import rela8 from "./components/images/clas-rel-8.png"
+import rela9 from "./components/images/clas-rel-9.png"
+import rela10 from "./components/images/clas-rel-10.png"
+
 
 
 import { useState, useEffect } from 'react';
 
 function App() {
+  const [ima,setIma]=useState([rela1,rela2,rela3,rela4,rela5,rela6,rela7,rela8,rela9,rela10]);
   
 
   const [data,setData]=useState([]);
+  const [imagenesTodas,setImagenesTodas]=useState([]);
+
   const[unidad,setUnidad]=useState("inicio");
   //// LOGICA  ---IMAGENES//
   const[dimension,setDimension] =useState("rounded-md w-56 h-32  border-solid border-2 border-indigo-600 hover:scale-110 ");
@@ -34,10 +49,11 @@ function App() {
   
   const[eleccion,setEleccion]=useState(false);
 
-  const [columna,setColumnas]=useState("grid grid-cols-4 gap-x-60 ");
+  // const [columna,setColumnas]=useState("grid grid-cols-4 gap-x-60 ");
+  const [columna,setColumnas]=useState("grid grid-cols-2  gap-1 md:grid-cols-3 md:gap-3 lg:grid-cols-4 lg:gap-x-60 ");
     
-   
   
+  const [opcionRelaciones,setOpcionRelaciones]=useState("inicio");
 
   const getData = async () => {
     try{
@@ -47,11 +63,10 @@ function App() {
     const api = await fetch(url);
     
     const data = await api.json();
-    
    
-    
     setData(data[2].data);
-     
+
+    
    
    
     }
@@ -84,6 +99,9 @@ function App() {
        dimension={dimension}
        setUnidad={setUnidad}
        unidad={unidad}
+       setOpcionRelaciones={setOpcionRelaciones}
+       opcionRelaciones={opcionRelaciones}
+
       
        setColumnas={setColumnas}
       />  
@@ -98,12 +116,14 @@ function App() {
                         contenido={dato.contenido}
                         fondo={"bg-gradient-to-r from-emerald-500 to-emerald-100 w-90 h-60  rounded-xl p-8  dark:bg-slate-800  "}
                         setUnidad={setUnidad}
+                        
 
                                    
                       
                       /> 
                     ))) : (unidad==="1")?(<div className='grid grid-cols-1 mx-0 px-0'>
                       <Logica
+                      
                       dimension={dimension}
                       grande={grande}
                       setImagen1={setImagen1}
@@ -124,8 +144,10 @@ function App() {
                       imagen1={imagen1}
                       imagen2={imagen2}
                       /></div>)
-                      :(unidad==="4")?( <div className='grid grid-cols-1 mx-0 px-0'>
+                      :(unidad==="4")?( <div >
                         <Relaciones
+                        setOpcionRelaciones={setOpcionRelaciones}
+                        opcionRelaciones={opcionRelaciones}
                         dimension={dimension}
                         grande={grande}
                         columna={columna}
@@ -152,6 +174,7 @@ function App() {
                         imagen8={imagen8}
                         imagen9={imagen9}
                         imagen10={imagen10}
+                        ima={ima}
                         
                         /></div>):((unidad==="5")?( <div className='grid grid-cols-1 mx-0 px-0'>
                         <Combinatoria

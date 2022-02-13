@@ -6,6 +6,7 @@ import React from 'react';
 
 
 const unidades = ({key,id,unidad,contenido,fondo,setUnidad}) => {
+   
    const eleccion = (elegida) => {
        setUnidad(elegida.id);
        
@@ -24,15 +25,16 @@ return(
                <button className="rounded-full w-32 h-8 bg-teal-400 hover:bg-teal-600" onClick={()=>eleccion({id})}> Contenido</button>
          </div>
              
-             <div class="pt-6 space-y-4">
+             <div className="pt-6 space-y-4">
                 <blockquote>
-                 <p class="text-lg font-medium">
+                 <p className="text-lg font-medium">
                  {unidad}
                 </p>
                  </blockquote>
-                <figcaption class="text-xs font-medium">
+                <figcaption className="text-xs font-medium">
                     <div>
                      contenido :   {contenido}
+                     
                     </div>
                     
                  </figcaption>
